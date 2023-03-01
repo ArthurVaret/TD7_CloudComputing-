@@ -20,8 +20,6 @@ docker run -d -p 5000:5000 -v .:/app tp6-flask
 
 Now, any changes made to the `text_file.txt` file on your host machine will be displayed on the web page when you refresh it.
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/9e2da813-2483-41c6-a012-c256c9fea213/Untitled.png)
-
 ## Make a mongo database persistent. (by using Volume)
 
 Create a bridge network for the containers to connect to!
@@ -38,9 +36,7 @@ Run mongo with volumes
 docker run -d --name mongodb --network bridgeTP6 -v ./db:/data/db mongo:latest
 ```
 
-The db is created :
-
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/4bec09f9-1f4a-4944-8898-61fc12b744dc/Untitled.png)
+The db is created.
 
 Modify `[app.py](http://app.py)` to add a mongo db
 
@@ -103,8 +99,6 @@ docker run -d --network bridgeTP6 -p 5000:5000 -v .:/app tp6-flask
 ```
 
 The app works !
-
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/68dfb5d1-5189-4403-b3ad-a2c0cf4ae95d/Untitled.png)
 
 ### Explain how you can migrate it! How to share it with another instance of the same database engine.
 
